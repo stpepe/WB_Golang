@@ -1,0 +1,15 @@
+port: "8000"
+
+db: 
+    username: "nats"
+    password: "24682468"
+    host: "localhost"
+    port: "5432"
+    dbname: "nats"
+    sslmode: "disable"
+
+nats:
+    cluster: "test-cluster"
+    sender: "order-sender"
+    receiver: "order-receiver"
+    client_port: "http://127.0.0.1:4223"

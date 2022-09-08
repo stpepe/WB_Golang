@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order</title>
+  </head>
+  <style>
+    .modal{
+        padding: 50px;
+        background: #ccc;
+        position: absolute; top: 75%; left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    </style>
+  <body>
+
+    <div class="modal">
+      <h1>Заказ</h1>
+      <div>OrderUid: {{.OrderUid}}</div>
+      <div>TrackNumber: {{.TrackNumber}}</div>
+      <div>Entry: {{.Entry}}</div>
+      <div><strong>Delivery:</strong></div>
+      <div>Name: {{.Delivery.Name}}</div>
+      <div>Phone: {{.Delivery.Phone}}</div>
+      <div>Zip: {{.Delivery.Zip}}</div>
+      <div>City: {{.Delivery.City}}</div>
+      <div>Address: {{.Delivery.Address}}</div>
+      <div>Region: {{.Delivery.Region}}</div>
+      <div>Email: {{.Delivery.Email}} }</div>
+      <div><strong>Payment:</strong></div>
+      <div>Transaction: {{.Payment.Transaction}}</div>
+      <div>RequestID: {{.Payment.RequestID}}</div>
+      <div>Currency: {{.Payment.Currency}}</div>
+      <div>Provider: {{.Payment.Provider}}</div>
+      <div>Amount: {{.Payment.Amount}}</div>
+      <div>PaymentDt: {{.Payment.PaymentDt}}</div>
+      <div>Bank: {{.Payment.Bank}}</div>
+      <div>DeliveryCost: {{.Payment.DeliveryCost}}</div>
+      <div>GoodsTotal: {{.Payment.GoodsTotal}}</div>
+      <div>CustomFee: {{.Payment.CustomFee}}</div>
+      <div><strong>Items:</strong></div> 
+      [<div> {{range .Items}}
+          <div>ChrtID: {{.ChrtID}}</div>
+          <div>TrackNumber: {{.TrackNumber}}</div>
+          <div>Price: {{.Price}}</div>
+          <div>Rid: {{.Rid}}</div>
+          <div>Name: {{.Name}}</div>
+          <div>Sale: {{.Sale}}</div>
+          <div>Size: {{.Size}}</div>
+          <div>TotalPrice: {{.TotalPrice}}</div>
+          <div>NmID: {{.NmID}}</div>
+          <div>Brand: {{.Brand}}</div>
+          <div>Status: {{.Status}}</div>
+        {{end}}
+      </div>]
+      <div>Locale: {{.Locale}}</div>
+      <div>InternalSignature: {{.InternalSignature}}</div>
+      <div>CustomerID: {{.CustomerId}}</div>
+      <div>DeliveryService: {{.DeliveryService}}</div>
+      <div>ShardKey: {{.ShardKey}}</div>
+      <div>SmID: {{.SmId}}</div>
+      <div>DateCreated: {{.DateCreated}}</div>
+      <div>OofShard: {{.OofShard}}</div>
+    </div>
+
+  </body>
+</html>

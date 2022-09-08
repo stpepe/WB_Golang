@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order</title>
+  </head>
+  <style>
+    .modal{
+        padding: 50px;
+        background: #ccc;
+        position: fixed; top: 50%; left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    </style>
+  <body>
+
+    <div class="modal">
+
+            <label for="order">Номер заказа:</label>
+            <input id="order" type="text" name="id">
+            <input type="button" id="button" value="Найти">
+    </div>
+
+  </body>
+  <script>
+    document.getElementById("button").onclick = function () {
+        location.href = "http://127.0.0.1:8000/order/"+ document.getElementById("order").value;
+    };
+</script>
+</html>
